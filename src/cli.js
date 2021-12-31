@@ -2,11 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = function cli(args) {
-  console.log(args);
-
   const ROOT = path.resolve(args[2]);
 
-  const DEEP = 2;
+  const index = args.findIndex((el) => el === '--depth' || el === '-d');
+  const DEEP = index !== -1 ? +args[index + 1] : 0;
+
+  if (Number.isNaN(DEEP)) {
+    console.error('depth must be a number');
+    return;
+  }
 
   let arr = [];
 
@@ -90,6 +94,7 @@ module.exports = function cli(args) {
           deep: 0,
         },
       ]);
+      directoryCounter++;
     }
 
     //check other dirs
