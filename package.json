@@ -1,0 +1,22 @@
+{
+  "name": "tree-cli",
+  "version": "1.0.0",
+  "description": "A cli project to show files tree",
+  "main": "src/index.js",
+  "bin": {
+    "myTree": "bin/myTree"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "myTree"
+  },
+  "keywords": [
+    "cli",
+    "myTree"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
